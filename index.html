@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Portfolio — Ahmadou GUEYE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --primary:#111; --secondary:#333; --bg:#f5f5f5; --card:#fff; --muted:#555;
+      --accent:#888; --radius:14px; --shadow:0 4px 20px rgba(0,0,0,0.1);
+    }
+    *{box-sizing:border-box; margin:0; padding:0;}
+    body{font-family:'Poppins',sans-serif; background:var(--bg); color:var(--secondary); line-height:1.6;}
+
+    /* ===== Barre de navigation ===== */
+    nav{position:sticky; top:0; background:var(--card); box-shadow:var(--shadow); z-index:1000; border-bottom:1px solid #ddd;}
+    nav ul{display:flex; justify-content:center; gap:32px; padding:16px 0; list-style:none;}
+    nav a{color:var(--secondary); text-decoration:none; font-weight:600; transition:color .3s, transform .3s; cursor:pointer;}
+    nav a:hover{color:var(--accent); transform:translateY(-2px);}
+
+    .container{max-width:1100px; margin:auto; padding:40px 24px;}
+
+    /* ===== En-tête ===== */
+    header{display:flex; flex-wrap:wrap; align-items:center; gap:24px; background:linear-gradient(135deg,#fff,#e5e5e5); padding:32px; border-radius:var(--radius); box-shadow:var(--shadow);}
+    .avatar{flex:0 0 160px; height:160px; border-radius:50%; overflow:hidden; box-shadow:0 8px 24px rgba(0,0,0,0.15);}
+    .avatar img{width:100%; height:100%; object-fit:cover;}
+    .intro{flex:1;}
+    .intro h1{font-size:30px; color:var(--secondary);}
+    .intro .role{color:var(--accent); font-weight:500; margin-top:4px;}
+    .contact{margin-top:14px; display:flex; flex-wrap:wrap; gap:10px;}
+    .chip{background:#eee; color:var(--secondary); padding:6px 14px; border-radius:999px; font-size:14px;}
+    .download{margin-top:10px; display:inline-block; background:var(--secondary); color:#fff; padding:10px 16px; border-radius:8px; text-decoration:none; transition:background .3s;}
+    .download:hover{background:#000;}
+
+    /* ===== Contenu dynamique ===== */
+    .content-section{display:none; margin-top:40px; animation:fadeIn .4s ease-in-out;}
+    .content-section.active{display:block;}
+
+    .card{background:var(--card); padding:28px; border-radius:var(--radius); box-shadow:var(--shadow); margin-bottom:20px; transition:transform .3s; border-left:4px solid var(--accent);}
+    .card:hover{transform:translateY(-4px);}
+
+    .section-title{font-size:20px; font-weight:600; color:var(--secondary); margin-bottom:16px; border-bottom:2px solid var(--accent); padding-bottom:8px;}
+    ul{padding-left:18px; color:var(--muted);}
+    li{margin-bottom:10px;}
+
+    .skills{display:flex; flex-wrap:wrap; gap:10px;}
+    .skill{background:#f0f0f0; color:var(--secondary); padding:10px 14px; border-radius:8px; font-size:14px; box-shadow:0 2px 6px rgba(0,0,0,0.05);}
+
+    footer{text-align:center; margin-top:40px; color:var(--muted); font-size:14px; padding:20px 0; border-top:1px solid #ddd;}
+
+    @keyframes fadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+
+    @media(max-width:768px){
+      header{flex-direction:column; text-align:center;}
+      .avatar{width:130px; height:130px;}
+      .intro h1{font-size:24px;}
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a onclick="showSection('about')">À propos</a></li>
+      <li><a onclick="showSection('experience')">Expériences</a></li>
+      <li><a onclick="showSection('education')">Formations</a></li>
+      <li><a onclick="showSection('skills')">Compétences</a></li>
+      <li><a onclick="showSection('contact')">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <header>
+      <div class="avatar">
+        <img src="images/Portrait d'un jeune homme élégant.png" alt="Photo Ahmadou GUEYE">
+      </div>
+      <div class="intro">
+        <h1>Ahmadou Mahanta GUEYE</h1>
+        <div class="role">Étudiant en MIAGE | Développeur & Gestionnaire de Projet</div>
+        <div class="contact">
+          <div class="chip">📍 Saint-Martin-d'Hères, France</div>
+          <div class="chip">✉️ mahantagueye28@gmail.com</div>
+          <div class="chip">📞 +33 07 45 16 72 67</div>
+        </div>
+        <a class="download" href="images/CV_Ahmadou_GUEYE.pdf" download>Télécharger le CV</a>
+      </div>
+    </header>
+
+    <section id="about" class="content-section active">
+      <div class="card">
+        <h2 class="section-title">À propos</h2>
+        <p>Étudiant en MIAGE, passionné par l’innovation technologique et la transformation numérique. J’allie mes compétences en développement et gestion pour contribuer à des projets à fort impact. Mon objectif : devenir un acteur clé dans la digitalisation des entreprises tout en continuant à apprendre et à innover.</p>
+      </div>
+    </section>
+
+    <section id="experience" class="content-section">
+      <div class="card">
+        <h2 class="section-title">Expériences professionnelles & Projets</h2>
+        <ul>
+          <li><strong>Stagiaire en conception 3D — Schneider Electric</strong> (Juin–Août 2025, Grenoble) : conception de modèles 3D interactifs et simulation pédagogique pour la formation en électricité.</li>
+          <li><strong>Employé polyvalent — McDonald’s</strong> (2023–Présent, Saint-Martin-d'Hères) : accueil client, gestion des commandes, travail en équipe dans un environnement exigeant.</li>
+          <li><strong>Projet académique : Application de gestion hôtelière</strong> — Développement complet (JavaFX, React, C/C++), documentation et tests.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="education" class="content-section">
+      <div class="card">
+        <h2 class="section-title">Formations</h2>
+        <ul>
+          <li><strong>Licence 3 MIAGE</strong> — Université Grenoble Alpes (2024)</li>
+          <li><strong>Licence 2 MIAGE</strong> — Université Grenoble Alpes, Valence (2023)</li>
+          <li><strong>Licence en Génie Logiciel</strong> — ISI Dakar (2021)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="skills" class="content-section">
+      <div class="card">
+        <h2 class="section-title">Compétences techniques</h2>
+        <div class="skills">
+          <span class="skill">Java</span><span class="skill">Python</span><span class="skill">SQL</span><span class="skill">HTML/CSS</span><span class="skill">JavaScript</span>
+          <span class="skill">TypeScript</span><span class="skill">React</span><span class="skill">Node.js</span><span class="skill">Spring Boot</span>
+          <span class="skill">Django</span><span class="skill">C</span><span class="skill">C++</span><span class="skill">C#</span><span class="skill">Prolog</span><span class="skill">Erlang</span>
+          <span class="skill">Bash</span><span class="skill">Docker</span><span class="skill">Git</span><span class="skill">GitHub Actions</span><span class="skill">Postman</span><span class="skill">Figma</span>
+          <span class="skill">IntelliJ IDEA</span><span class="skill">Visual Studio Code</span><span class="skill">Eclipse</span>
+        </div>
+      </div>
+      <div class="card">
+        <h2 class="section-title">Bases de données</h2>
+        <div class="skills">
+          <span class="skill">MySQL</span><span class="skill">PostgreSQL</span><span class="skill">Oracle</span><span class="skill">SQL Server</span>
+        </div>
+      </div>
+      <div class="card">
+        <h2 class="section-title">Méthodologies & Outils</h2>
+        <div class="skills">
+          <span class="skill">UML</span><span class="skill">Merise</span><span class="skill">Agile (Scrum)</span><span class="skill">Gestion de projet</span><span class="skill">WordPress</span>
+        </div>
+      </div>
+      <div class="card">
+        <h2 class="section-title">Langues & Centres d’intérêt</h2>
+        <div class="skills">
+          <span class="skill">Français</span><span class="skill">Anglais</span><span class="skill">Wolof</span>
+        </div>
+        <ul>
+          <li><strong>Centres d’intérêt :</strong> Manga, Musculation, Football, Basketball</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="content-section">
+      <div class="card">
+        <h2 class="section-title">Contact</h2>
+        <p>📧 <strong>mahantagueye28@gmail.com</strong><br>📞 <strong>+33 07 45 16 72 67</strong><br><br>
+        Retrouvez-moi sur <a href="#" style="color:var(--secondary);text-decoration:none;font-weight:500;">LinkedIn</a> pour découvrir mes projets et mon parcours.</p>
+      </div>
+    </section>
+
+    <footer>© 2025 Ahmadou Mahanta GUEYE — Étudiant en MIAGE | Tous droits réservés</footer>
+  </div>
+
+  <script>
+    function showSection(id){
+      document.querySelectorAll('.content-section').forEach(sec=>sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
